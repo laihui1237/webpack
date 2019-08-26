@@ -1,0 +1,84 @@
+@charset "utf-8";
+//系统css常量设置
+$baseMinWidth: 1024px; //窗口最小宽度
+$baseMinHeidht: 600px; //窗口最小高度
+$loginTextColor: #fff; //登陆页面主要字体颜色
+$loginOpColor: #5897BA #B8B8BB; //登陆页面操作的颜色 一个主操作颜色 如：按钮颜色，输入框获取到焦点后输入框边框色等  第二个辅操作颜色，如输入框为获取焦点时边框颜色
+$btnPrimaryMouse: #265E90; //按钮鼠标点击移入时样式
+$filter: true !default; //是否为ie6-8开启css3滤镜兼容，常用于渐变背景 
+$primary: #4099BD !default; //主色
+$topNavHeight: 60px; //头部导航高度
+$topNavLogHeight: 32px; //头部logo标志高度
+$leftNavWidth: 180px; //左侧导航宽度
+$orgNavWidth: 200px; //左侧组织机构导航宽度
+$orgNavDev: -20px; //左侧组织机构导航偏移margin-left：-20px;
+$table: #788898 #fff #dddddd; //表格主题色， 一个为头部背景 第二个为头部字体颜色 第三个为单元格分割线颜色
+$tabNavHeight: 52px; //标签栏高度
+$arrowUn: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA4klEQVRYR+2Vuw6CQBBF76B+moWhkUJjYcnwUSylMUYLbaz8NJExayDZAt2HJjZDy87cM2fIQvjzQ3/OhwKoATWgBtSA1wAzbwDsich71r3WReQBYGuMOXy67oOa9hA7IpqE/Dv68JUx5uw7HwRgmzBzAeDkg4gJt32DAQYIIjoCmL6ZrBWRdcjkQ30UgC2qqioHcBmBaAEs67q++rS776MBHAi731nf7A6giA2PXoFLXpblPMuy17Rd1+VN09xiJk9egRvCzAsRaVPDvzKQMu1YTdI38KtwNaAG1IAaUAPWwBMNz0AhDl4NFQAAAABJRU5ErkJggg==); //向下的箭头
+$arrowUp: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADESURBVFhH7ZFBDsIgEEUB9UScwYXpxkYXHgA4FOEAJl3YjSvvwMqNXsWGOOAQN9VCXTov+fntMOH/powgCIIgfkEptdZab/B1Fhy9mhguhDjH5xBC45y7pINKZhUwxjRgJ9AqDRh7gFprbSpUQ3UBDO9ByzR4M4C2tSUEehHwv1uwsfBInPW4U0xxAby4A42FZ+JZV1Nigf6VHM45n9yHnfhReynl3Xt/fU0/M3khhB/AjiXhGSyxgxK3khIEQRDEP8PYE3Z2LjVctUGYAAAAAElFTkSuQmCC); //向上的箭头
+$close: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABlElEQVQ4T52SvYtTQRTFzwENBEReFEQMCso+bRS0EMRCAiqsrawsKNjoDLFTrBdSpPaDRSHzYpposUQbKxtXBWH/BrMWQnRBUDKNDoRHjrzlvRCjKXS64dzfzLn3HuI/D6c5a+1OSTdI3gZwLNMkfSa5GkJ41O12fxT1E7Ber+8bj8evAJyaY+JTmqaLnU7nQ6ZPQGPMW5JnAaxJukZyokl6QfKCpJGkE+12++u2aIzJCp8CGPT7/SNxHF8n+ST/+YFz7o4xZoPkGUnNJElWtkFr7TsA5/KeXnrvL1cqFQvgaAZZax8DuJU/NHDOHSrAbwD2Fr1Jel6tVpcbjcbYWnsfQDasyQkh7Cqsfie5ZxokeTWEUCqXy81ZME3T3fOsXomi6BnJ/aPR6GKpVLr3V6vFcCRtee8P59BS3vO69/5SFEXvSZ6WtJIkSXN6HW9I1rLJAjg4s8svkg6Q/AjgpHPu52wAXgM4PicAA5LnW63W5m8ByC61Wm1HHMc3AdwluZBb3SL5cDgcrvZ6vfBH5P41678A+vi4ZD1ljf4AAAAASUVORK5CYII=); //关闭默认图片为灰色
+$closeActive: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABr0lEQVQ4T52Sv0tbcRTFz4nx1UBVklQNgoIiulhoaQslg3kkSnUtilDBxarRydZZcMisLdKaN7jpILSLkwjv5VkqLu0fUHQQ/EFanhWpPxN4V/ISY2Kz6F3P9/O99557iHsWC7ln2o/ySjkeAjgBoi2n7Qkw98CT/rQ2+Or0+n0eDM5v1JbzYpXk05JDCHZoozsxHv6V0fOgqhmmAEFClgUcYIEG4CsgnQKm3C77sT7c+dsB1fnEAFyyKIJdJtls18ugS7CQ7SwfzNHIOzVubIJ4CZGYGY1MOWAorq+T7HCeASu1Xuv1nyP/CIHWDBTSjM8ExhxdsLseDTdmO8Z1C6Q/v5vIFzMZ7sc0bVXTZx2zCkrxpB9mO2r6IUFfIfiP1W/8nkMlde6O3QbTbqWq5KiWt66v5m9yCWQACrskJTOlR702B3JgeQNNOag3t5Nh+ep6Hh0lvxN8AZEpMxqJ3ZwjbiRAqI6zREPRLUX2hayHyPYJq5/8HH1+VhQAhZc6iPZSAch8KCiLfIuGtooC4Lg7nXAjYL8FOQmgJXseOQD4MXVaMbf5Pnj+X+TumvUrMGKuZLB4o8YAAAAASUVORK5CYII=); //关闭图片为主色调颜色
+$closeHover: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABo0lEQVQ4T52Sv0sbYRjHv98aA0KRaEHlzhQU0y4VdBDEoQS0oKsohQou+r6kW0vngINzbREFL+piHcR26dTFH4WCf4Nph0LuDgXFW/QgnPeUuybBaDPYZ/2+H/g8z/sl/nN4kxOtmx2ROZJvADyNMhGxSS43+f5K19bWZfV9DTzJ5Tquw/AbgMEGEr8RBOPm5uZxlNdAW6lDkCMAdigyA7KWicgXkGMUKSdE+jvX10/j0FVqRshPAEpGsdjrZjKzIDdiVeBDt2W9tZU6IjlMkUWjUMjHoKP1dwDPY0WRr4bnTTptbRrAkwhytF4F8LqyQsm0rMdV8AzAo+puIvLZNM2XXFgIba2XCETHqk2T7z+MQVupc5LtdSD56tT3k0FLy+JtMBkErY1Up51Uaptkl1Euv3CTyff/VK0eR0Rc0/N6KtBU5R/3Tc+bcFKpHySHRCTfXShEFn/HVuqAZDa6LIB0XTEAhyKGkL8eAAOGZV3VFSAIwz0CzxoUoBSSo+m1tZ91BYi1stmEk8nMA3hHsq+i6pL8GF5cLKd3d/07lbtv1/8Akzi2eGFdWhwAAAAASUVORK5CYII=) !important; //关闭红色一般为鼠标放入后显示的样式
+//主按钮颜色样式
+@mixin btn-primary {
+    color: $white;
+    background-color: $primary;
+    border-color: $primary;
+}
+
+@mixin btn-primary-mouse {
+    color: $white;
+    background-color: $btnPrimaryMouse;
+    border-color: $btnPrimaryMouse;
+}
+
+//辅按钮颜色(暂时未用  bootstrap默认就可以)
+@mixin btn-default {
+    background-color: $white;
+    border-color: $gray;
+}
+
+@mixin btn-default-mouse {
+    color: $grayDarker;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c;
+}
+//左侧导航向上按钮
+@mixin arrowUn {
+    background-image: $arrowUn;
+    background-position: 100% center;
+    background-repeat: no-repeat;
+    text-align: left;
+    padding: 0 0 0 38px;
+    cursor: pointer;
+}
+//html 或者body的宽度已经高度和最小高度和宽度设置
+@mixin baseHeightWidth {
+    width: 100%;
+    height: 100%;
+    min-width: $baseMinWidth;
+    min-height: $baseMinHeidht;
+}
+//ie9一下模拟placeholder的样式
+@mixin placeholder {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding-left: 12px;
+    padding-top: 2px;
+    color: #aaa;
+    font-size: 13px;
+    font-weight: 300;
+    width: auto;
+    cursor: text;
+}
+//去掉选择
+@mixin userSelect{
+    /* 去掉选择 */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -khtml-user-select: none;
+    /* Konqueror */
+   @include prefixer(user-select, none, o webkit moz ms);
+    /* Non-prefixed version, currently not supported by any browser */
+}

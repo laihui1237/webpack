@@ -1,0 +1,10 @@
+$nav-bg: #F90;
+$main-color:red;
+.nav{
+  background-color: $nav-bg;
+  color: $main-color;
+  border-color: $nav-bg;
+}
+.nav a{
+  display: inline;
+}
